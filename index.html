@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngọc Huyện Studio - Kho Tài Khoản TikTok Ngoại Chuẩn Quốc Gia 24/7</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts hỗ trợ Tiếng Việt sắc nét -->
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Be Vietnam Pro"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        tkblack: '#0B0E14',
+                        tkcard: '#131722',
+                        tkborder: '#1F2636',
+                        tkpink: '#FE2C55',
+                        tkcyan: '#25F4EE',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B0E14;
+            color: #F3F4F6;
+            overflow-x: hidden;
+        }
+        ::-webkit-scrollbar { width: 8px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #0B0E14; }
+        ::-webkit-scrollbar-thumb { background: #1F2636; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FE2C55; }
+
+        .glass-header {
+            background: rgba(11, 14, 20, 0.9);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+        .tk-gradient-text {
+            background: linear-gradient(90deg, #25F4EE 0%, #FFFFFF 48%, #FE2C55 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .tk-btn-primary {
+            background: linear-gradient(135deg, #FE2C55 0%, #d91b42 100%);
+            box-shadow: -2px 0 0 #25F4EE, 0 8px 20px -4px rgba(254, 44, 85, 0.45);
+            transition: all 0.25s ease;
+        }
+        .tk-btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: -3px 0 0 #25F4EE, 0 12px 24px -4px rgba(254, 44, 85, 0.65);
+        }
+        .tk-card {
+            background-color: #131722;
+            border: 1px solid #1F2636;
+            transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .tk-card:hover {
+            border-color: rgba(37, 244, 238, 0.45);
+            box-shadow: 0 12px 30px -10px rgba(37, 244, 238, 0.14), 0 0 0 1px rgba(254, 44, 85, 0.22);
+            transform: translateY(-3px);
+        }
+        @keyframes modalPop {
+            from { opacity: 0; transform: scale(0.95) translateY(8px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .animate-modal { animation: modalPop 0.2s ease-out forwards; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-tkpink selection:text-white">
+
+    <!-- =====================================================================
+         1. HEADER & THANH ĐIỀU HƯỚNG THƯƠNG HIỆU NGỌC HUYỆN STUDIO
+    ====================================================================== -->
+    <header class="sticky top-0 z-40 glass-header border-b border-tkborder">
+        <!-- Thanh top liên hệ nhanh -->
+        <div class="bg-[#080A0F] border-b border-tkborder/70 py-1.5 px-4 text-[11px] sm:text-xs text-gray-300">
+            <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+                <div class="flex items-center gap-3">
+                    <span class="text-tkcyan font-semibold flex items-center gap-1.5">
+                        <i class="fa-solid fa-circle-check"></i> Ngọc Huyện Studio - Uy Tín Tạo Thương Hiệu
+                    </span>
+                    <span class="hidden md:inline text-gray-500">|</span>
+                    <span class="hidden md:inline text-gray-400">Chuyên Acc TikTok Đức (DE), Mỹ (US), Anh (UK), Pháp (FR), Nhật (JP)...</span>
+                </div>
+                <div class="flex items-center gap-3 ml-auto">
+                    <a href="tel:0367526922" class="hover:text-tkcyan transition flex items-center gap-1 font-semibold text-white">
+                        <i class="fa-solid fa-phone-volume text-tkpink"></i> Hotline: 0367.526.922
+                    </a>
+                    <span class="text-gray-600">|</span>
+                    <a href="https://zalo.me/0367526922" target="_blank" rel="noopener" class="text-tkcyan hover:underline font-semibold flex items-center gap-1">
+                        <i class="fa-solid fa-comment-dots"></i> Zalo Hỗ Trợ 24/7
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thanh điều hướng chính -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo Ngọc Huyện Studio -->
+                <div class="flex items-center gap-3 cursor-pointer" onclick="resetAllFilters()">
+                    <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-black border border-tkcyan/40 flex items-center justify-center relative shadow-[2px_2px_0px_#FE2C55,-2px_-2px_0px_#25F4EE]">
+                        <span class="font-extrabold text-white text-lg tracking-tighter">NH</span>
+                        <i class="fa-brands fa-tiktok text-[10px] text-tkcyan absolute -bottom-1 -right-1 bg-tkblack p-0.5 rounded"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-base sm:text-xl font-extrabold tracking-tight text-white">NGỌC HUYỆN <span class="text-tkpink">STUDIO</span></span>
+                            <span class="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-bold rounded bg-tkcyan/15 text-tkcyan border border-tkcyan/30">AUTO 24/7</span>
+                        </div>
+                        <p class="text-[11px] text-gray-400">Kho Acc TikTok Ngoại • Zalo: <strong class="text-gray-200">0367.526.922</strong></p>
+                    </div>
+                </div>
+
+                <!-- Menu Điều Hướng Desktop -->
+                <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-gray-300">
+                    <button onclick="resetAllFilters()" class="hover:text-tkcyan transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-store text-tkpink"></i> Kho Acc Ngoại
+                    </button>
+                    <button onclick="openDepositModal()" class="hover:text-emerald-400 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-wallet text-emerald-400"></i> Nạp Tiền Ví
+                    </button>
+                    <button onclick="openHistoryModal()" class="hover:text-tkcyan transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-box-archive text-tkcyan"></i> Acc Đã Mua
+                    </button>
+                    <span id="adminNavDesktopSlot"></span>
+                </nav>
+
+                <div class="flex items-center gap-2 sm:gap-3" id="headerAuthArea"></div>
+            </div>
+        </div>
+
+        <!-- Menu Điều Hướng Mobile -->
+        <div class="flex lg:hidden items-center justify-around border-t border-tkborder py-2 px-2 bg-tkcard/95 text-xs font-medium text-gray-300">
+            <button onclick="resetAllFilters()" class="flex flex-col items-center gap-1 hover:text-tkcyan">
+                <i class="fa-solid fa-store text-tkpink text-sm"></i> Kho Acc
+            </button>
+            <button onclick="openDepositModal()" class="flex flex-col items-center gap-1 text-emerald-400">
+                <i class="fa-solid fa-wallet text-sm"></i> Nạp tiền
+            </button>
+            <button onclick="openHistoryModal()" class="flex flex-col items-center gap-1 hover:text-tkcyan">
+                <i class="fa-solid fa-box-archive text-sm"></i> Đã mua
+            </button>
+            <a href="https://zalo.me/0367526922" target="_blank" rel="noopener" class="flex flex-col items-center gap-1 text-tkcyan">
+                <i class="fa-solid fa-headset text-sm"></i> Zalo Shop
+            </a>
+            <span id="adminNavMobileSlot" class="contents"></span>
+        </div>
+    </header>
+
+    <!-- =====================================================================
+         2. LIVE TICKER & HERO BANNER
+    ====================================================================== -->
+    <main class="flex-grow">
+        <div class="bg-[#131722] border-b border-tkborder py-2 px-4">
+            <div class="max-w-7xl mx-auto flex items-center gap-3 text-xs text-gray-300 overflow-hidden">
+                <span class="px-2 py-0.5 rounded bg-tkpink text-white font-bold text-[10px] tracking-wider shrink-0 animate-pulse">LIVE</span>
+                <div class="truncate">
+                    <span class="text-gray-400">Hoạt động mới tại <strong>Ngọc Huyện Studio</strong>:</span>
+                    <strong class="text-white">minh***de</strong> vừa mua <span class="text-tkcyan font-semibold">🇩🇪 Acc TikTok Đức (DE) 18.5K Follow Bật Kiếm Tiền</span> • 
+                    <strong class="text-white">thao***mmo</strong> vừa nạp <span class="text-emerald-400 font-semibold">+1.000.000đ</span> qua VietQR • 
+                    <strong class="text-white">tuan***us</strong> vừa mua <span class="text-tkpink font-semibold">🇺🇸 Acc TikTok Mỹ (US) Creator Rewards</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden py-10 sm:py-14 border-b border-tkborder">
+            <div class="absolute -top-28 -left-24 w-96 h-96 bg-tkcyan/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-28 -right-24 w-96 h-96 bg-tkpink/15 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tkcard border border-tkborder text-tkcyan text-xs font-semibold mb-4">
+                            <i class="fa-solid fa-earth-europe text-tkpink"></i> Ngọc Huyện Studio • Chuẩn IP Ngoại 100%
+                        </div>
+                        <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight mb-4">
+                            Kho Tài Khoản <br class="hidden sm:block">
+                            <span class="tk-gradient-text">TikTok Ngoại Chuẩn Quốc Gia</span>
+                        </h1>
+                        <p class="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto lg:mx-0 mb-6 leading-relaxed">
+                            Chào mừng bạn đến với <strong class="text-white">Ngọc Huyện Studio</strong> — Hệ thống cung cấp tài khoản TikTok Đức (DE), Mỹ (US), Anh (UK), Pháp (FR), Nhật (JP), Hàn (KR)... Đã ngâm chuẩn quốc gia, hỗ trợ Bật Kiếm Tiền (Creator Rewards), Live Studio & TikTok Shop.
+                        </p>
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3">
+                            <a href="#store-section" class="tk-btn-primary px-6 py-3 rounded-xl font-bold text-white text-sm flex items-center gap-2">
+                                <i class="fa-brands fa-tiktok"></i> Chọn Quốc Gia & Mua Acc
+                            </a>
+                            <button onclick="openDepositModal()" class="px-6 py-3 rounded-xl font-semibold text-gray-200 bg-tkcard hover:bg-gray-800 border border-tkborder text-sm flex items-center gap-2 transition">
+                                <i class="fa-solid fa-qrcode text-emerald-400"></i> Nạp Tiền Tự Động
+                            </button>
+                            <a href="https://zalo.me/0367526922" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl font-semibold text-tkcyan bg-tkcyan/10 hover:bg-tkcyan/20 border border-tkcyan/30 text-sm flex items-center gap-2 transition">
+                                <i class="fa-solid fa-phone"></i> Zalo: 0367.526.922
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5">
+                        <div class="bg-tkcard border border-tkborder rounded-2xl p-6 shadow-2xl">
+                            <div class="flex items-center justify-between pb-4 mb-4 border-b border-tkborder">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-xl bg-tkpink/15 border border-tkpink/30 flex items-center justify-center text-tkpink">
+                                        <i class="fa-solid fa-shield-check text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-white text-sm">Ngọc Huyện Studio Cam Kết</h3>
+                                        <p class="text-xs text-emerald-400 flex items-center gap-1.5">
+                                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Giao Acc tự động 24/7
+                                        </p>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-mono bg-black/50 text-tkcyan px-2.5 py-1 rounded border border-tkborder">0367.526.922</span>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-3 text-center mb-4">
+                                <div class="bg-tkblack p-3 rounded-xl border border-tkborder">
+                                    <p class="text-lg sm:text-xl font-extrabold text-white">15+ Nước</p>
+                                    <p class="text-[11px] text-gray-400 mt-0.5">Đức, Mỹ, Anh...</p>
+                                </div>
+                                <div class="bg-tkblack p-3 rounded-xl border border-tkborder">
+                                    <p class="text-lg sm:text-xl font-extrabold text-tkcyan">100%</p>
+                                    <p class="text-[11px] text-gray-400 mt-0.5">Kèm Mail Gốc</p>
+                                </div>
+                                <div class="bg-tkblack p-3 rounded-xl border border-tkborder">
+                                    <p class="text-lg sm:text-xl font-extrabold text-tkpink">Bảo Hành</p>
+                                    <p class="text-[11px] text-gray-400 mt-0.5">Login Lần Đầu</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-tkblack/80 border border-tkborder rounded-xl p-3.5 text-xs text-gray-300 space-y-1.5">
+                                <p class="flex items-center gap-2"><i class="fa-solid fa-check text-tkcyan"></i> Bàn giao đầy đủ: <code class="text-amber-400 font-mono">User | Pass | Mail | PassMail | 2FA</code></p>
+                                <p class="flex items-center gap-2"><i class="fa-solid fa-check text-tkcyan"></i> Hỗ trợ kỹ thuật & đổi thông tin qua Zalo: <strong class="text-white">0367.526.922</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             3. BỘ LỌC QUỐC GIA & DANH SÁCH TÀI KHOẢN TIKTOK NGOẠI
+        ====================================================================== -->
+        <section id="store-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="mb-5">
+                <div class="flex items-center justify-between mb-3">
+                    <h2 class="text-sm font-bold uppercase tracking-wider text-gray-300 flex items-center gap-2">
+                        <i class="fa-solid fa-earth-americas text-tkcyan"></i> Chọn Quốc Gia Tài Khoản TikTok:
+                    </h2>
+                    <span id="totalAvailableBadge" class="text-xs font-medium text-tkcyan"></span>
+                </div>
+                <div class="flex items-center gap-2 overflow-x-auto pb-2" id="countryFilterBar"></div>
+            </div>
+
+            <div class="bg-tkcard border border-tkborder rounded-2xl p-4 mb-6 grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
+                <div class="md:col-span-5 relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                    <input type="text" id="searchInput" oninput="renderAccounts()" placeholder="Tìm mã acc (#NH01), nước Đức, bật kiếm tiền..." 
+                        class="w-full bg-tkblack border border-tkborder focus:border-tkcyan rounded-xl pl-10 pr-4 py-2.5 text-sm text-white outline-none transition">
+                </div>
+                <div class="md:col-span-4">
+                    <select id="featureFilter" onchange="renderAccounts()" 
+                        class="w-full bg-tkblack border border-tkborder focus:border-tkcyan rounded-xl px-3.5 py-2.5 text-sm text-gray-200 outline-none transition">
+                        <option value="ALL">📌 Tất cả tính năng tài khoản</option>
+                        <option value="Bật Kiếm Tiền">💰 Đã Bật Kiếm Tiền (Creator Rewards)</option>
+                        <option value="TikTok Shop">🛍️ Có TikTok Shop / Gắn Giỏ Hàng</option>
+                        <option value="Live Studio">🎥 Mở Live Studio / Live Mobile</option>
+                        <option value="Acc Cổ / Ngâm">🛡️ Acc Cổ / Ngâm Sạch Lâu Năm</option>
+                    </select>
+                </div>
+                <div class="md:col-span-3">
+                    <select id="sortFilter" onchange="renderAccounts()" 
+                        class="w-full bg-tkblack border border-tkborder focus:border-tkcyan rounded-xl px-3.5 py-2.5 text-sm text-gray-200 outline-none transition">
+                        <option value="NEWEST">Sắp xếp: Mới đăng nhất</option>
+                        <option value="PRICE_ASC">Giá: Thấp đến Cao</option>
+                        <option value="PRICE_DESC">Giá: Cao đến Thấp</option>
+                        <option value="FOLLOW_DESC">Follower: Nhiều nhất</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="accountsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"></div>
+
+            <div id="emptyState" class="hidden text-center py-16 bg-tkcard border border-tkborder rounded-2xl">
+                <div class="w-16 h-16 rounded-full bg-tkblack border border-tkborder flex items-center justify-center mx-auto mb-4 text-gray-500 text-2xl">
+                    <i class="fa-brands fa-tiktok"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-1">Chưa có tài khoản nào khớp bộ lọc</h3>
+                <p class="text-sm text-gray-400 mb-4">Bạn có thể chọn quốc gia khác hoặc liên hệ trực tiếp Zalo <strong class="text-tkcyan">0367.526.922</strong> để đặt hàng theo yêu cầu.</p>
+                <button onclick="resetAllFilters()" class="px-5 py-2.5 rounded-xl bg-tkpink text-white text-sm font-semibold hover:opacity-90 transition">
+                    Xem tất cả tài khoản
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- =====================================================================
+         4. FOOTER THƯƠNG HIỆU NGỌC HUYỆN STUDIO
+    ====================================================================== -->
+    <footer class="bg-[#080A0F] border-t border-tkborder mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-tkborder">
+                <div>
+                    <div class="flex items-center gap-2.5 mb-3">
+                        <div class="w-9 h-9 rounded-lg bg-black border border-tkcyan/40 flex items-center justify-center shadow-[2px_2px_0px_#FE2C55]">
+                            <span class="font-extrabold text-white text-sm">NH</span>
+                        </div>
+                        <span class="text-lg font-extrabold text-white">NGỌC HUYỆN <span class="text-tkpink">STUDIO</span></span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-3">
+                        Hệ thống cung cấp tài khoản TikTok ngoại chuẩn quốc gia (Đức, Mỹ, Anh, Pháp, Nhật, Hàn...) uy tín hàng đầu. Bàn giao tự động 24/7, đầy đủ mail gốc và bảo hành đăng nhập.
+                    </p>
+                    <div class="flex items-center gap-3 text-xs">
+                        <a href="tel:0367526922" class="px-3 py-1.5 rounded-lg bg-tkcard border border-tkborder text-white hover:border-tkpink transition">
+                            <i class="fa-solid fa-phone text-tkpink mr-1"></i> 0367.526.922
+                        </a>
+                        <a href="https://zalo.me/0367526922" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-lg bg-tkcyan/10 border border-tkcyan/30 text-tkcyan hover:bg-tkcyan/20 transition">
+                            <i class="fa-solid fa-comment-dots mr-1"></i> Zalo Hỗ Trợ
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-3">Quốc Gia Phổ Biến</h4>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li><button onclick="selectCountry('DE')" class="hover:text-tkcyan transition">🇩🇪 Tài khoản TikTok Đức (DE) - Bật Kiếm Tiền</button></li>
+                        <li><button onclick="selectCountry('US')" class="hover:text-tkcyan transition">🇺🇸 Tài khoản TikTok Mỹ (US) - Beta Creativity</button></li>
+                        <li><button onclick="selectCountry('GB')" class="hover:text-tkcyan transition">🇬🇧 Tài khoản TikTok Anh (UK) - TikTok Shop</button></li>
+                        <li><button onclick="selectCountry('FR')" class="hover:text-tkcyan transition">🇫🇷 Tài khoản TikTok Pháp (FR) & Châu Âu</button></li>
+                        <li><button onclick="selectCountry('JP')" class="hover:text-tkcyan transition">🇯🇵 Tài khoản TikTok Nhật Bản (JP) & Hàn Quốc (KR)</button></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-3">Chính Sách & Hỗ Trợ</h4>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Bảo hành sai mật khẩu, khóa trước khi giao 1 đổi 1.</li>
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Hướng dẫn ngâm IP & đổi thông tin an toàn.</li>
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Nhận tìm Acc TikTok ngoại theo yêu cầu qua Zalo: <strong class="text-white">0367.526.922</strong>.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
+                <p id="secretAdminTrigger" class="cursor-pointer select-none hover:text-gray-400 transition" title="Ngọc Huyện Studio">
+                    © 2026 Ngọc Huyện Studio • Hotline/Zalo: 0367.526.922. All rights reserved.
+                </p>
+                <p class="text-gray-500">Hệ thống vận hành tự động 24/7</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fixed bottom-5 right-5 z-30 flex flex-col gap-2.5">
+        <a href="https://zalo.me/0367526922" target="_blank" rel="noopener" 
+           class="group flex items-center gap-2 bg-[#0068FF] hover:bg-[#0055d4] text-white px-4 py-3 rounded-full shadow-lg shadow-blue-600/30 transition transform hover:scale-105">
+            <span class="font-extrabold text-xs bg-white text-[#0068FF] px-1.5 py-0.5 rounded">Zalo</span>
+            <span class="text-xs font-bold hidden sm:inline">0367.526.922</span>
+        </a>
+        <a href="tel:0367526922" 
+           class="flex items-center justify-center gap-2 bg-tkpink hover:bg-rose-600 text-white px-4 py-3 rounded-full shadow-lg shadow-rose-600/30 transition transform hover:scale-105">
+            <i class="fa-solid fa-phone-volume text-sm animate-bounce"></i>
+            <span class="text-xs font-bold hidden sm:inline">Gọi Ngay</span>
+        </a>
+    </div>
+
+    <!-- =====================================================================
+         5. CÁC MODAL CHỨC NĂNG
+    ====================================================================== -->
+    <div id="authModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+        <div class="bg-tkcard border border-tkborder rounded-2xl w-full max-w-md p-6 relative animate-modal shadow-2xl">
+            <button onclick="closeModal('authModal')" class="absolute top-4 right-4 w-8 h-8 rounded-lg bg-tkblack text-gray-400 hover:text-white flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-xl bg-black border border-tkcyan/40 flex items-center justify-center mx-auto mb-3 shadow-[2px_2px_0px_#FE2C55]">
+                    <span class="font-extrabold text-white text-lg">NH</span>
+                </div>
+                <h3 class="text-xl font-extrabold text-white">Ngọc Huyện Studio</h3>
+                <p class="text-xs text-gray-400 mt-1">Đăng nhập để nạp tiền và nhận tài khoản tự động</p>
+            </div>
+            <div class="grid grid-cols-2 gap-2 bg-tkblack p-1 rounded-xl border border-tkborder mb-5">
+                <button id="tabLoginBtn" onclick="switchAuthTab('login')" class="py-2 rounded-lg text-xs font-bold bg-tkpink text-white transition">Đăng Nhập</button>
+                <button id="tabRegisterBtn" onclick="switchAuthTab('register')" class="py-2 rounded-lg text-xs font-bold text-gray-400 hover:text-white transition">Đăng Ký Mới</button>
+            </div>
+            <form id="loginForm" onsubmit="handleLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1.5">Tên đăng nhập</label>
+                    <input type="text" id="loginUsername" required placeholder="Nhập tên đăng nhập của bạn"
+                        class="w-full bg-tkblack border border-tkborder focus:border-tkcyan rounded-xl px-4 py-2.5 text-sm text-white outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1.5">Mật khẩu</label>
+                    <input type="password" id="loginPassword" required placeholder="••••••••"
+                        class="w-full bg-tkblack border border-tkborder focus:border-tkcyan rounded-xl px-4 py-2.5 text-sm text-white outline-none">
+                </div>
+                <button type="submit" class="w-full tk-btn-primary py-3 rounded-xl font-bold text-white text-sm">Đăng Nhập Ngay</button>
+            </form>
+            <form id="registerForm" onsubmit="handleRegister(event)" class="space-y-4 hidden">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1.5">Tên tài khoản muốn tạo</label>
+                    <input type="text" id="regUsername" required minlength="4" placeholder="VD: minhtuan99"
+                        class="w-full bg-tkblack border border-tkborder focus:border-tkcyan rounded-xl px-4 py-2.5 text-sm text-white outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1.5">Số điện thoại / Zalo</label>
+                    <input type="tel" id="regPhone" required placeholder="VD: 0987654321"
+                        class="w-full bg-tkblack border border-tkborder focus:border-tkcyan rounded-xl px-4 py-2.5 text-sm text-white outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1.5">Mật khẩu</label>
+                    <input type="password" id="regPassword" required minlength="4" placeholder="Tối thiểu 4 ký tự"
+                        class="w-full bg-tkblack border border-tkborder focus:border-tkcyan rounded-xl px-4 py-2.5 text-sm text-white outline-none">
+                </div>
+                <button type="submit" class="w-full tk-btn-primary py-3 rounded-xl font-bold text-white text-sm">Tạo Tài Khoản Khách Hàng</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- NẠP TIỀN -->
+    <div id="depositModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-tkcard border border-tkborder rounded-2xl w-full max-w-xl p-6 relative animate-modal shadow-2xl my-8">
+            <button onclick="closeModal('depositModal')" class="absolute top-4 right-4 w-8 h-8 rounded-lg bg-tkblack text-gray-400 hover:text-white flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                    <i class="fa-solid fa-wallet text-lg"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-extrabold text-white">Nạp Tiền Vào Ví Ngọc Huyện Studio</h3>
+                    <p class="text-xs text-gray-400">Hỗ trợ nạp nhanh 24/7 • Zalo: <strong class="text-tkcyan">0367.526.922</strong></p>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-2 bg-tkblack p-1 rounded-xl border border-tkborder mb-5">
+                <button id="depTabBank" onclick="switchDepositTab('bank')" class="py-2.5 rounded-lg text-xs font-bold bg-emerald-600 text-white transition flex items-center justify-center gap-1.5">
+                    <i class="fa-solid fa-qrcode"></i> Chuyển Khoản / VietQR
+                </button>
+                <button id="depTabCard" onclick="switchDepositTab('card')" class="py-2.5 rounded-lg text-xs font-bold text-gray-400 hover:text-white transition flex items-center justify-center gap-1.5">
+                    <i class="fa-solid fa-sim-card"></i> Nạp Thẻ Cào ĐT
+                </button>
+            </div>
+            <div id="depositBankSection" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1.5">Chọn hoặc nhập số tiền muốn nạp (VNĐ)</label>
+                    <div class="grid grid-cols-4 gap-2 mb-2">
+                        <button type="button" onclick="setDepositAmount(100000)" class="py-1.5 rounded-lg bg-tkblack border border-tkborder hover:border-emerald-400 text-xs font-semibold text-gray-200">100K</button>
+                        <button type="button" onclick="setDepositAmount(200000)" class="py-1.5 rounded-lg bg-tkblack border border-tkborder hover:border-emerald-400 text-xs font-semibold text-gray-200">200K</button>
+                        <button type="button" onclick="setDepositAmount(500000)" class="py-1.5 rounded-lg bg-tkblack border border-tkborder hover:border-emerald-400 text-xs font-semibold text-gray-200">500K</button>
+                        <button type="button" onclick="setDepositAmount(1000000)" class="py-1.5 rounded-lg bg-tkblack border border-tkborder hover:border-emerald-400 text-xs font-semibold text-gray-200">1 Triệu</button>
+                    </div>
+                    <input type="number" id="depositAmountInput" value="200000" min="10000" step="10000" oninput="updateVietQR()"
+                        class="w-full bg-tkblack border border-tkborder focus:border-emerald-400 rounded-xl px-4 py-2.5 text-sm font-bold text-emerald-400 outline-none">
+                </div>
+                <div class="bg-tkblack border border-tkborder rounded-xl p-4 grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
+                    <div class="sm:col-span-5 flex flex-col items-center">
+                        <div class="bg-white p-2 rounded-xl shadow-md">
+                            <img id="vietQrImage" src="" alt="Mã QR Chuyển Khoản" class="w-40 h-40 object-contain">
+                        </div>
+                        <span class="text-[11px] text-gray-400 mt-2">Quét mã bằng App Ngân hàng</span>
+                    </div>
+                    <div class="sm:col-span-7 space-y-2.5 text-xs">
+                        <div class="bg-tkcard p-2.5 rounded-lg border border-tkborder">
+                            <span class="text-gray-400 block">Ngân hàng thụ hưởng:</span>
+                            <strong class="text-white text-sm" id="bankNameDisplay">MB Bank</strong>
+                        </div>
+                        <div class="bg-tkcard p-2.5 rounded-lg border border-tkborder flex items-center justify-between">
+                            <div>
+                                <span class="text-gray-400 block">Số tài khoản:</span>
+                                <strong class="text-tkcyan font-mono text-sm" id="bankAccDisplay">0367526922</strong>
+                            </div>
+                            <button onclick="copyText(document.getElementById('bankAccDisplay').innerText, 'Đã sao chép Số tài khoản!')" class="px-2.5 py-1.5 rounded bg-tkblack hover:bg-gray-800 text-gray-300 border border-tkborder">Copy</button>
+                        </div>
+                        <div class="bg-tkcard p-2.5 rounded-lg border border-tkborder">
+                            <span class="text-gray-400 block">Chủ tài khoản:</span>
+                            <strong class="text-white uppercase" id="bankOwnerDisplay">NGOC HUYEN STUDIO</strong>
+                        </div>
+                        <div class="bg-tkcard p-2.5 rounded-lg border border-amber-500/40 flex items-center justify-between">
+                            <div>
+                                <span class="text-gray-400 block">Nội dung chuyển khoản:</span>
+                                <strong class="text-amber-400 font-mono text-sm" id="transferMemoDisplay">NAP</strong>
+                            </div>
+                            <button onclick="copyText(document.getElementById('transferMemoDisplay').innerText, 'Đã sao chép Nội dung!')" class="px-2.5 py-1.5 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300">Copy</button>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="simulateBankDeposit()" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition shadow-lg shadow-emerald-600/25">
+                    <i class="fa-solid fa-check-circle mr-1.5"></i> Tôi Đã Chuyển Khoản (Cộng Tiền Test Ngay)
+                </button>
+            </div>
+            <form id="depositCardSection" onsubmit="handleCardDeposit(event)" class="space-y-4 hidden">
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1.5">Nhà mạng</label>
+                        <select id="cardTelco" class="w-full bg-tkblack border border-tkborder rounded-xl px-3 py-2.5 text-sm text-white outline-none">
+                            <option value="VIETTEL">Viettel (85%)</option>
+                            <option value="VINAPHONE">Vinaphone (85%)</option>
+                            <option value="MOBIFONE">Mobifone (82%)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1.5">Mệnh giá</label>
+                        <select id="cardAmount" class="w-full bg-tkblack border border-tkborder rounded-xl px-3 py-2.5 text-sm text-white outline-none">
+                            <option value="50000">50.000đ</option>
+                            <option value="100000" selected>100.000đ</option>
+                            <option value="200000">200.000đ</option>
+                            <option value="500000">500.000đ</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1.5">Số Seri thẻ</label>
+                    <input type="text" id="cardSerial" required placeholder="Nhập số seri" class="w-full bg-tkblack border border-tkborder rounded-xl px-4 py-2.5 text-sm font-mono text-white outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1.5">Mã thẻ cào (PIN)</label>
+                    <input type="text" id="cardPin" required placeholder="Nhập mã PIN" class="w-full bg-tkblack border border-tkborder rounded-xl px-4 py-2.5 text-sm font-mono text-white outline-none">
+                </div>
+                <button type="submit" class="w-full tk-btn-primary py-3 rounded-xl font-bold text-white text-sm">Nạp Thẻ & Cộng Tiền Vào Ví</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- CHI TIẾT VÀ BÀN GIAO -->
+    <div id="detailModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-tkcard border border-tkborder rounded-2xl w-full max-w-lg p-6 relative animate-modal shadow-2xl my-8">
+            <button onclick="closeModal('detailModal')" class="absolute top-4 right-4 w-8 h-8 rounded-lg bg-tkblack text-gray-400 hover:text-white flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="detailModalContent"></div>
+        </div>
+    </div>
+
+    <div id="deliveryModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-tkcard border-2 border-emerald-500/50 rounded-2xl w-full max-w-lg p-6 relative animate-modal shadow-2xl my-8">
+            <button onclick="closeModal('deliveryModal')" class="absolute top-4 right-4 w-8 h-8 rounded-lg bg-tkblack text-gray-400 hover:text-white flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="deliveryModalContent"></div>
+        </div>
+    </div>
+
+    <div id="historyModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-tkcard border border-tkborder rounded-2xl w-full max-w-2xl p-6 relative animate-modal shadow-2xl my-8">
+            <button onclick="closeModal('historyModal')" class="absolute top-4 right-4 w-8 h-8 rounded-lg bg-tkblack text-gray-400 hover:text-white flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-lg font-extrabold text-white mb-1 flex items-center gap-2">
+                <i class="fa-solid fa-box-archive text-tkcyan"></i> Kho Tài Khoản Bạn Đã Mua
+            </h3>
+            <p class="text-xs text-gray-400 mb-4">Lưu trữ bảo mật tại Ngọc Huyện Studio • Zalo: 0367.526.922</p>
+            <div id="historyListContent" class="space-y-3 max-h-[60vh] overflow-y-auto pr-1"></div>
+        </div>
+    </div>
+
+    <!-- ADMIN MODAL -->
+    <div id="adminModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-tkcard border border-tkpink/50 rounded-2xl w-full max-w-3xl p-6 relative animate-modal shadow-2xl my-8">
+            <button onclick="closeModal('adminModal')" class="absolute top-4 right-4 w-8 h-8 rounded-lg bg-tkblack text-gray-400 hover:text-white flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="flex items-center justify-between mb-5 pr-8">
+                <div>
+                    <span class="px-2 py-0.5 rounded bg-tkpink/20 text-tkpink text-[10px] font-bold uppercase">Quyền Chủ Shop • Ngọc Huyện Studio</span>
+                    <h3 class="text-xl font-extrabold text-white mt-1">Quản Lý Kho Acc TikTok Ngoại</h3>
+                </div>
+            </div>
+            <div class="flex gap-2 bg-tkblack p-1 rounded-xl border border-tkborder mb-5">
+                <button id="adminTabAdd" onclick="switchAdminTab('add')" class="flex-1 py-2 rounded-lg text-xs font-bold bg-tkpink text-white transition">Đăng Bán Acc Mới</button>
+                <button id="adminTabManage" onclick="switchAdminTab('manage')" class="flex-1 py-2 rounded-lg text-xs font-bold text-gray-400 hover:text-white transition">Danh Sách Kho Acc</button>
+                <button id="adminTabTopup" onclick="switchAdminTab('topup')" class="flex-1 py-2 rounded-lg text-xs font-bold text-gray-400 hover:text-white transition">Cộng Tiền Khách</button>
+            </div>
+            <form id="adminAddForm" onsubmit="handleAdminAddAccount(event)" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1.5">Quốc gia *</label>
+                        <select id="adminAccCountry" required class="w-full bg-tkblack border border-tkborder rounded-xl px-3.5 py-2.5 text-sm text-white outline-none">
+                            <option value="DE">🇩🇪 Đức (DE)</option>
+                            <option value="US">🇺🇸 Mỹ (US)</option>
+                            <option value="GB">🇬🇧 Anh (UK)</option>
+                            <option value="FR">🇫🇷 Pháp (FR)</option>
+                            <option value="JP">🇯🇵 Nhật (JP)</option>
+                            <option value="KR">🇰🇷 Hàn Quốc (KR)</option>
+                            <option value="CA">🇨🇦 Canada (CA)</option>
+                            <option value="AU">🇦🇺 Úc (AU)</option>
+                            <option value="SG">🇸🇬 Singapore (SG)</option>
+                            <option value="ES">🇪🇸 Tây Ban Nha (ES)</option>
+                            <option value="IT">🇮🇹 Ý (IT)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1.5">Tính năng *</label>
+                        <select id="adminAccFeature" required class="w-full bg-tkblack border border-tkborder rounded-xl px-3.5 py-2.5 text-sm text-white outline-none">
+                            <option value="Bật Kiếm Tiền">💰 Bật Kiếm Tiền (Creator Rewards)</option>
+                            <option value="TikTok Shop">🛍️ TikTok Shop / Gắn Giỏ Hàng</option>
+                            <option value="Live Studio">🎥 Live Studio / Live Mobile</option>
+                            <option value="Acc Cổ / Ngâm">🛡️ Acc Cổ / Ngâm Lâu Năm</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1.5">Tiêu đề hiển thị *</label>
+                    <input type="text" id="adminAccTitle" required placeholder="VD: Acc TikTok Đức 15K Follow Bật Kiếm Tiền" class="w-full bg-tkblack border border-tkborder rounded-xl px-4 py-2.5 text-sm text-white outline-none">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1.5">Followers *</label>
+                        <input type="number" id="adminAccFollowers" required min="0" placeholder="VD: 15200" class="w-full bg-tkblack border border-tkborder rounded-xl px-4 py-2.5 text-sm text-white outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1.5">Likes</label>
+                        <input type="number" id="adminAccLikes" min="0" placeholder="VD: 84000" class="w-full bg-tkblack border border-tkborder rounded-xl px-4 py-2.5 text-sm text-white outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1.5">Giá bán (VNĐ) *</label>
+                        <input type="number" id="adminAccPrice" required min="1000" step="1000" placeholder="VD: 450000" class="w-full bg-tkblack border border-tkborder rounded-xl px-4 py-2.5 text-sm font-bold text-tkcyan outline-none">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1.5">Mô tả chi tiết</label>
+                    <textarea id="adminAccDesc" rows="2" placeholder="Tương tác thật, kèm mail gốc..." class="w-full bg-tkblack border border-tkborder rounded-xl px-4 py-2 text-sm text-white outline-none"></textarea>
+                </div>
+                <div class="bg-tkblack border border-amber-500/40 rounded-xl p-3.5">
+                    <label class="block text-xs font-bold text-amber-400 mb-1.5">Dữ liệu bàn giao (User | Pass | Mail | PassMail | 2FA) *</label>
+                    <input type="text" id="adminAccSecret" required placeholder="user | pass | mail | passmail | 2fa" class="w-full bg-tkcard border border-tkborder rounded-lg px-3.5 py-2.5 text-xs font-mono text-emerald-300 outline-none">
+                </div>
+                <button type="submit" class="w-full tk-btn-primary py-3 rounded-xl font-bold text-white text-sm">Đăng Bán Lên Cửa Hàng</button>
+            </form>
+            <div id="adminManageSection" class="hidden space-y-2.5 max-h-[55vh] overflow-y-auto pr-1"></div>
+            <form id="adminTopupForm" onsubmit="handleAdminManualTopup(event)" class="hidden space-y-4">
+                <div class="bg-tkblack border border-tkborder rounded-xl p-4 text-xs text-gray-300">
+                    Cộng tiền thủ công cho khách sau khi nhận chuyển khoản qua Zalo <strong class="text-white">0367.526.922</strong>.
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1.5">Tên đăng nhập khách hàng</label>
+                    <input type="text" id="topupTargetUser" required placeholder="VD: minhtuan99" class="w-full bg-tkblack border border-tkborder rounded-xl px-4 py-2.5 text-sm text-white outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1.5">Số tiền cộng thêm (VNĐ)</label>
+                    <input type="number" id="topupTargetAmount" required min="1000" step="1000" placeholder="VD: 500000" class="w-full bg-tkblack border border-tkborder rounded-xl px-4 py-2.5 text-sm font-bold text-emerald-400 outline-none">
+                </div>
+                <button type="submit" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm">Xác Nhận Cộng Tiền</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="toastContainer" class="fixed top-20 right-4 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <script>
+        const SHOP_CONFIG = {
+            shopName: "Ngọc Huyện Studio",
+            hotline: "0367.526.922",
+            zaloLink: "https://zalo.me/0367526922",
+            adminUsername: "admin",
+            adminPassword: "admin123",
+            bankId: "MB",
+            bankName: "MB Bank",
+            bankAccountNo: "636212345555",
+            bankAccountOwner: "NGOC HUYEN STUDIO"
+        };
+
+        const COUNTRIES = {
+            DE: { code: "DE", name: "Đức", fullName: "Đức (DE)", flag: "🇩🇪" },
+            US: { code: "US", name: "Mỹ", fullName: "Mỹ (US)", flag: "🇺🇸" },
+            GB: { code: "GB", name: "Anh", fullName: "Anh (UK)", flag: "🇬🇧" },
+            FR: { code: "FR", name: "Pháp", fullName: "Pháp (FR)", flag: "🇫🇷" },
+            JP: { code: "JP", name: "Nhật Bản", fullName: "Nhật Bản (JP)", flag: "🇯🇵" },
+            KR: { code: "KR", name: "Hàn Quốc", fullName: "Hàn Quốc (KR)", flag: "🇰🇷" },
+            CA: { code: "CA", name: "Canada", fullName: "Canada (CA)", flag: "🇨🇦" },
+            AU: { code: "AU", name: "Úc", fullName: "Úc (AU)", flag: "🇦🇺" },
+            SG: { code: "SG", name: "Singapore", fullName: "Singapore (SG)", flag: "🇸🇬" },
+            ES: { code: "ES", name: "Tây Ban Nha", fullName: "Tây Ban Nha (ES)", flag: "🇪🇸" },
+            IT: { code: "IT", name: "Ý", fullName: "Ý (IT)", flag: "🇮🇹" }
+        };
+
+        const DEFAULT_ACCOUNTS = [
+            {
+                id: "NH01",
+                country: "DE",
+                title: "Acc TikTok Đức (DE) 18.5K Follow Đã Bật Kiếm Tiền Beta",
+                followers: 18500,
+                likes: 142000,
+                feature: "Bật Kiếm Tiền",
+                price: 650000,
+                desc: "Tài khoản đăng ký IP Đức chuẩn 100%, đã mở Creator Rewards Program, sạch gậy, kèm mail gốc.",
+                secret: "de_creator_88 | Huyen@2026DE | de_creator88@outlook.com | MailPass#99 | 2FA: JBSWY3DPEHPK3PXP",
+                status: "AVAILABLE",
+                createdAt: 1730000008
+            },
+            {
+                id: "NH02",
+                country: "US",
+                title: "Acc TikTok Mỹ (US) 25.4K Follow Có TikTok Shop & Live Studio",
+                followers: 25400,
+                likes: 310000,
+                feature: "TikTok Shop",
+                price: 890000,
+                desc: "Tài khoản TikTok US tương tác cực khỏe, mở sẵn giỏ hàng Affiliate US và Live Studio PC.",
+                secret: "us_shop_pro25 | HuyenUS@998 | us_shop_pro25@outlook.com | UsMail#771 | 2FA: MFRGGZDFMZTWQ2LK",
+                status: "AVAILABLE",
+                createdAt: 1730000006
+            },
+            {
+                id: "NH03",
+                country: "SG",
+                title: "Acc TikTok Singapore (SG) 12.1K Follow Sạch Sẽ",
+                followers: 12100,
+                likes: 54000,
+                feature: "Acc Cổ / Ngâm",
+                price: 380000,
+                desc: "Acc khu vực Singapore ping thấp, chạy ads hoặc làm content Đông Nam Á mượt mà.",
+                secret: "sg_acc_99 | HuyenSG#2026 | sg_acc_99@outlook.com | SgPass#11 | 2FA: NBSWY3DPFQQHO33S",
+                status: "AVAILABLE",
+                createdAt: 1730000004
+            }
+        ];
+
+        const STORAGE_KEYS = {
+            ACCOUNTS: "nhs_tiktok_accounts_v2",
+            USERS: "nhs_tiktok_users_v2",
+            CURRENT_USER: "nhs_tiktok_current_user_v2"
+        };
+
+        let accounts = [];
+        let users = {};
+        let currentUser = null;
+        let selectedCountry = "ALL";
+
+        function initApp() {
+            const savedAccs = localStorage.getItem(STORAGE_KEYS.ACCOUNTS);
+            if (savedAccs) {
+                try { accounts = JSON.parse(savedAccs); } catch (e) { accounts = [...DEFAULT_ACCOUNTS]; }
+            } else {
+                accounts = [...DEFAULT_ACCOUNTS];
+                saveAccounts();
+            }
+
+            const savedUsers = localStorage.getItem(STORAGE_KEYS.USERS);
+            if (savedUsers) {
+                try { users = JSON.parse(savedUsers); } catch (e) { users = {}; }
+            }
+
+            const savedSession = localStorage.getItem(STORAGE_KEYS.CURRENT_USER);
+            if (savedSession) {
+                try { currentUser = JSON.parse(savedSession); } catch (e) { currentUser = null; }
+            }
+
+            document.getElementById("bankNameDisplay").innerText = SHOP_CONFIG.bankName;
+            document.getElementById("bankAccDisplay").innerText = SHOP_CONFIG.bankAccountNo;
+            document.getElementById("bankOwnerDisplay").innerText = SHOP_CONFIG.bankAccountOwner;
+
+            renderHeader();
+            renderCountryFilters();
+            renderAccounts();
+            setupSecretAdminAccess();
+        }
+
+        function saveAccounts() { localStorage.setItem(STORAGE_KEYS.ACCOUNTS, JSON.stringify(accounts)); }
+        function saveUsers() { localStorage.setItem(STORAGE_KEYS.USERS, JSON.stringify(users)); }
+
+        function formatVND(amount) { return Number(amount || 0).toLocaleString("vi-VN") + "đ"; }
+        function formatCompactNumber(num) {
+            const n = Number(num || 0);
+            if (n >= 1000000) return (n / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
+            if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, "") + "K";
+            return n.toString();
+        }
+
+        function showToast(message, type = "info") {
+            const container = document.getElementById("toastContainer");
+            const toast = document.createElement("div");
+            const styles = {
+                success: "bg-emerald-950/95 border-emerald-500 text-emerald-100",
+                error: "bg-rose-950/95 border-tkpink text-rose-100",
+                info: "bg-tkcard/95 border-tkcyan text-gray-100"
+            };
+            const icons = { success: "fa-circle-check text-emerald-400", error: "fa-circle-exclamation text-tkpink", info: "fa-circle-info text-tkcyan" };
+            toast.className = `pointer-events-auto flex items-center gap-2.5 px-4 py-3 rounded-xl border shadow-xl text-xs font-medium max-w-sm animate-modal ${styles[type] || styles.info}`;
+            toast.innerHTML = `<i class="fa-solid ${icons[type] || icons.info} text-base"></i><span>${message}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = "0";
+                toast.style.transition = "opacity 0.3s ease";
+                setTimeout(() => toast.remove(), 300);
+            }, 3500);
+        }
+
+        function copyText(text, successMsg = "Đã sao chép!") {
+            const temp = document.createElement("textarea");
+            temp.value = text;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand("copy");
+            document.body.removeChild(temp);
+            showToast(successMsg, "success");
+        }
+
+        function openModal(id) { const el = document.getElementById(id); if (el) { el.classList.remove("hidden"); el.classList.add("flex"); } }
+        function closeModal(id) { const el = document.getElementById(id); if (el) { el.classList.add("hidden"); el.classList.remove("flex"); } }
+
+        function isAdmin() { return currentUser && currentUser.role === "admin"; }
+
+        function renderHeader() {
+            const authArea = document.getElementById("headerAuthArea");
+            const adminDesktopSlot = document.getElementById("adminNavDesktopSlot");
+            const adminMobileSlot = document.getElementById("adminNavMobileSlot");
+
+            if (isAdmin()) {
+                adminDesktopSlot.innerHTML = `<button onclick="openAdminModal()" class="px-3 py-1.5 rounded-lg bg-tkpink/20 border border-tkpink text-tkpink font-bold text-xs hover:bg-tkpink hover:text-white transition flex items-center gap-1.5"><i class="fa-solid fa-crown"></i> Quản Trị Shop</button>`;
+                adminMobileSlot.innerHTML = `<button onclick="openAdminModal()" class="flex flex-col items-center gap-1 text-tkpink font-bold"><i class="fa-solid fa-crown text-sm"></i> Admin</button>`;
+            } else {
+                adminDesktopSlot.innerHTML = "";
+                adminMobileSlot.innerHTML = "";
+            }
+
+            if (!currentUser) {
+                authArea.innerHTML = `
+                    <button onclick="openAuthModal('login')" class="px-3.5 py-2 rounded-xl bg-tkcard hover:bg-gray-800 border border-tkborder text-xs sm:text-sm font-semibold text-gray-200 transition">Đăng Nhập</button>
+                    <button onclick="openAuthModal('register')" class="tk-btn-primary px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-white">Đăng Ký</button>
+                `;
+            } else if (isAdmin()) {
+                authArea.innerHTML = `
+                    <button onclick="openAdminModal()" class="px-3 py-2 rounded-xl bg-tkpink/15 border border-tkpink/40 text-tkpink text-xs font-bold flex items-center gap-1.5"><i class="fa-solid fa-user-shield"></i> Chủ Shop</button>
+                    <button onclick="handleLogout()" title="Đăng xuất" class="w-9 h-9 rounded-xl bg-tkcard border border-tkborder hover:border-tkpink text-gray-400 hover:text-white flex items-center justify-center transition"><i class="fa-solid fa-right-from-bracket text-xs"></i></button>
+                `;
+            } else {
+                const userData = users[currentUser.username] || { balance: 0 };
+                authArea.innerHTML = `
+                    <div onclick="openDepositModal()" class="cursor-pointer px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 hover:border-emerald-400 transition flex items-center gap-2">
+                        <div class="text-right">
+                            <span class="block text-[10px] text-gray-400 leading-none">Số dư ví</span>
+                            <strong class="text-xs sm:text-sm font-extrabold text-emerald-400">${formatVND(userData.balance)}</strong>
+                        </div>
+                        <span class="w-6 h-6 rounded-lg bg-emerald-500 text-black font-bold flex items-center justify-center text-xs">+</span>
+                    </div>
+                    <div class="hidden sm:flex items-center gap-2 px-3 py-2 rounded-xl bg-tkcard border border-tkborder text-xs font-semibold text-white">
+                        <i class="fa-solid fa-circle-user text-tkcyan"></i><span>${currentUser.username}</span>
+                    </div>
+                    <button onclick="handleLogout()" title="Đăng xuất" class="w-9 h-9 rounded-xl bg-tkcard border border-tkborder hover:border-tkpink text-gray-400 hover:text-white flex items-center justify-center transition"><i class="fa-solid fa-right-from-bracket text-xs"></i></button>
+                `;
+            }
+        }
+
+        function openAuthModal(tab = "login") { switchAuthTab(tab); openModal("authModal"); }
+        function switchAuthTab(tab) {
+            const loginForm = document.getElementById("loginForm");
+            const registerForm = document.getElementById("registerForm");
+            const tabLoginBtn = document.getElementById("tabLoginBtn");
+            const tabRegisterBtn = document.getElementById("tabRegisterBtn");
+            if (tab === "login") {
+                loginForm.classList.remove("hidden"); registerForm.classList.add("hidden");
+                tabLoginBtn.className = "py-2 rounded-lg text-xs font-bold bg-tkpink text-white transition";
+                tabRegisterBtn.className = "py-2 rounded-lg text-xs font-bold text-gray-400 hover:text-white transition";
+            } else {
+                loginForm.classList.add("hidden"); registerForm.classList.remove("hidden");
+                tabRegisterBtn.className = "py-2 rounded-lg text-xs font-bold bg-tkpink text-white transition";
+                tabLoginBtn.className = "py-2 rounded-lg text-xs font-bold text-gray-400 hover:text-white transition";
+            }
+        }
+
+        function handleRegister(e) {
+            e.preventDefault();
+            const username = document.getElementById("regUsername").value.trim().toLowerCase();
+            const password = document.getElementById("regPassword").value;
+            if (username === SHOP_CONFIG.adminUsername.toLowerCase()) { showToast("Tên tài khoản không khả dụng!", "error"); return; }
+            if (users[username]) { showToast("Tên tài khoản đã tồn tại!", "error"); return; }
+            users[username] = { username, password, balance: 0, purchases: [] };
+            saveUsers();
+            currentUser = { username, role: "user" };
+            localStorage.setItem(STORAGE_KEYS.CURRENT_USER, JSON.stringify(currentUser));
+            closeModal("authModal"); renderHeader();
+            showToast(`Chào mừng ${username} đến với Ngọc Huyện Studio!`, "success");
+            e.target.reset();
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const u = document.getElementById("loginUsername").value.trim();
+            const p = document.getElementById("loginPassword").value;
+            if (u === SHOP_CONFIG.adminUsername && p === SHOP_CONFIG.adminPassword) {
+                currentUser = { username: SHOP_CONFIG.adminUsername, role: "admin" };
+                localStorage.setItem(STORAGE_KEYS.CURRENT_USER, JSON.stringify(currentUser));
+                closeModal("authModal"); renderHeader();
+                showToast("Đăng nhập quyền Chủ Shop thành công!", "success");
+                e.target.reset();
+                return;
+            }
+            const record = users[u.toLowerCase()];
+            if (!record || record.password !== p) { showToast("Sai tài khoản hoặc mật khẩu!", "error"); return; }
+            currentUser = { username: u.toLowerCase(), role: "user" };
+            localStorage.setItem(STORAGE_KEYS.CURRENT_USER, JSON.stringify(currentUser));
+            closeModal("authModal"); renderHeader();
+            showToast(`Đăng nhập thành công!`, "success");
+            e.target.reset();
+        }
+
+        function handleLogout() { currentUser = null; localStorage.removeItem(STORAGE_KEYS.CURRENT_USER); renderHeader(); showToast("Đã đăng xuất.", "info"); }
+
+        function setupSecretAdminAccess() {
+            document.addEventListener("keydown", (e) => {
+                if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "a") {
+                    e.preventDefault();
+                    if (isAdmin()) openAdminModal(); else openAuthModal("login");
+                }
+            });
+            let clicks = 0;
+            document.getElementById("secretAdminTrigger").addEventListener("click", () => {
+                clicks++;
+                setTimeout(() => clicks = 0, 1000);
+                if (clicks >= 3) { clicks = 0; if (isAdmin()) openAdminModal(); else openAuthModal("login"); }
+            });
+        }
+
+        function renderCountryFilters() {
+            const bar = document.getElementById("countryFilterBar");
+            const available = accounts.filter(a => a.status === "AVAILABLE");
+            const counts = {};
+            available.forEach(a => counts[a.country] = (counts[a.country] || 0) + 1);
+
+            let html = `<button onclick="selectCountry('ALL')" class="shrink-0 px-4 py-2 rounded-xl text-xs font-bold border transition flex items-center gap-2 ${selectedCountry === 'ALL' ? 'bg-tkpink border-tkpink text-white shadow-lg shadow-tkpink/25' : 'bg-tkcard border-tkborder text-gray-300 hover:border-tkcyan'}"><span>🌍 Tất cả</span><span class="px-1.5 py-0.5 rounded-md text-[10px] ${selectedCountry === 'ALL' ? 'bg-black/30 text-white' : 'bg-tkblack text-tkcyan'}">${available.length}</span></button>`;
+
+            Object.values(COUNTRIES).forEach(c => {
+                const count = counts[c.code] || 0;
+                const isActive = selectedCountry === c.code;
+                html += `<button onclick="selectCountry('${c.code}')" class="shrink-0 px-3.5 py-2 rounded-xl text-xs font-bold border transition flex items-center gap-2 ${isActive ? 'bg-tkcyan text-black border-tkcyan shadow-lg shadow-tkcyan/25' : 'bg-tkcard border-tkborder text-gray-300 hover:border-tkcyan'}"><span class="text-sm">${c.flag}</span><span>${c.fullName}</span><span class="px-1.5 py-0.5 rounded-md text-[10px] ${isActive ? 'bg-black/20 text-black font-extrabold' : 'bg-tkblack text-gray-400'}">${count}</span></button>`;
+            });
+            bar.innerHTML = html;
+            document.getElementById("totalAvailableBadge").innerText = `Đang có sẵn: ${available.length} tài khoản`;
+        }
+
+        function selectCountry(code) { selectedCountry = code; renderCountryFilters(); renderAccounts(); }
+        function resetAllFilters() { selectedCountry = "ALL"; document.getElementById("searchInput").value = ""; document.getElementById("featureFilter").value = "ALL"; renderCountryFilters(); renderAccounts(); }
+
+        function renderAccounts() {
+            const grid = document.getElementById("accountsGrid");
+            const emptyState = document.getElementById("emptyState");
+            const kw = document.getElementById("searchInput").value.trim().toLowerCase();
+            const featureFilter = document.getElementById("featureFilter").value;
+            const sortFilter = document.getElementById("sortFilter").value;
+
+            let filtered = accounts.filter(acc => {
+                const cObj = COUNTRIES[acc.country] || { fullName: acc.country };
+                const matchCountry = selectedCountry === "ALL" || acc.country === selectedCountry;
+                const matchFeature = featureFilter === "ALL" || acc.feature === featureFilter;
+                const matchKw = !kw || acc.id.toLowerCase().includes(kw) || acc.title.toLowerCase().includes(kw) || acc.desc.toLowerCase().includes(kw) || cObj.fullName.toLowerCase().includes(kw);
+                return matchCountry && matchFeature && matchKw;
+            });
+
+            filtered.sort((a, b) => {
+                if (a.status !== b.status) return a.status === "AVAILABLE" ? -1 : 1;
+                if (sortFilter === "PRICE_ASC") return a.price - b.price;
+                if (sortFilter === "PRICE_DESC") return b.price - a.price;
+                if (sortFilter === "FOLLOW_DESC") return b.followers - a.followers;
+                return (b.createdAt || 0) - (a.createdAt || 0);
+            });
+
+            if (filtered.length === 0) { grid.innerHTML = ""; emptyState.classList.remove("hidden"); return; }
+            emptyState.classList.add("hidden");
+
+            grid.innerHTML = filtered.map(acc => {
+                const c = COUNTRIES[acc.country] || { flag: "🌐", fullName: acc.country };
+                const isSold = acc.status === "SOLD";
+                return `
+                    <div class="tk-card rounded-2xl overflow-hidden flex flex-col justify-between relative ${isSold ? 'opacity-70' : ''}">
+                        <div>
+                            <div class="bg-gradient-to-r from-[#192030] via-[#131722] to-[#1f1622] px-4 py-3 border-b border-tkborder flex items-center justify-between">
+                                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-black/60 border border-tkcyan/30 text-xs font-bold text-white"><span class="text-base">${c.flag}</span> TikTok ${c.fullName}</span>
+                                <span class="font-mono text-xs font-bold text-tkcyan bg-tkblack px-2 py-0.5 rounded border border-tkborder">#${acc.id}</span>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center justify-between gap-2 mb-2.5">
+                                    <span class="px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-tkpink/15 text-tkpink border border-tkpink/30">${acc.feature}</span>
+                                    <span class="text-[11px] font-semibold ${isSold ? 'text-rose-400' : 'text-emerald-400'}">${isSold ? '● Đã bán' : '● Sẵn sàng'}</span>
+                                </div>
+                                <h3 class="font-bold text-white text-sm sm:text-[15px] leading-snug mb-2 line-clamp-2 min-h-[42px]">${acc.title}</h3>
+                                <p class="text-xs text-gray-400 line-clamp-2 mb-4 min-h-[32px]">${acc.desc || 'Tài khoản chuẩn quốc gia, kèm mail gốc.'}</p>
+                                <div class="grid grid-cols-2 gap-2 bg-tkblack p-2.5 rounded-xl border border-tkborder text-center">
+                                    <div><span class="block text-[10px] text-gray-400 uppercase">Followers</span><strong class="text-sm font-extrabold text-white">${formatCompactNumber(acc.followers)}</strong></div>
+                                    <div class="border-l border-tkborder"><span class="block text-[10px] text-gray-400 uppercase">Likes</span><strong class="text-sm font-extrabold text-tkcyan">${formatCompactNumber(acc.likes)}</strong></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-4 pb-4 pt-2 border-t border-tkborder/60 bg-black/20">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs text-gray-400">Giá bán:</span>
+                                <span class="text-lg font-extrabold text-tkpink">${formatVND(acc.price)}</span>
+                            </div>
+                            ${isSold ? `<button disabled class="w-full py-2.5 rounded-xl bg-gray-800 text-gray-500 font-bold text-xs cursor-not-allowed">ĐÃ BÁN</button>` : `
+                                <div class="grid grid-cols-5 gap-2">
+                                    <button onclick="openDetailModal('${acc.id}')" class="col-span-2 py-2.5 rounded-xl bg-tkblack hover:bg-gray-800 border border-tkborder text-xs font-semibold text-gray-200 transition">Chi tiết</button>
+                                    <button onclick="initiatePurchase('${acc.id}')" class="col-span-3 tk-btn-primary py-2.5 rounded-xl text-xs font-bold text-white flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-shopping"></i> Mua Ngay</button>
+                                </div>
+                            `}
+                        </div>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        function openDepositModal() {
+            if (!currentUser) { openAuthModal("login"); showToast("Vui lòng đăng nhập để nạp tiền!", "info"); return; }
+            if (isAdmin()) { showToast("Tài khoản Chủ Shop không cần nạp tiền!", "info"); return; }
+            document.getElementById("transferMemoDisplay").innerText = `NAP ${currentUser.username.toUpperCase()}`;
+            updateVietQR();
+            switchDepositTab("bank");
+            openModal("depositModal");
+        }
+
+        function switchDepositTab(tab) {
+            const bankSec = document.getElementById("depositBankSection");
+            const cardSec = document.getElementById("depositCardSection");
+            const tabBank = document.getElementById("depTabBank");
+            const tabCard = document.getElementById("depTabCard");
+            if (tab === "bank") {
+                bankSec.classList.remove("hidden"); cardSec.classList.add("hidden");
+                tabBank.className = "py-2.5 rounded-lg text-xs font-bold bg-emerald-600 text-white transition flex items-center justify-center gap-1.5";
+                tabCard.className = "py-2.5 rounded-lg text-xs font-bold text-gray-400 hover:text-white transition flex items-center justify-center gap-1.5";
+            } else {
+                bankSec.classList.add("hidden"); cardSec.classList.remove("hidden");
+                tabCard.className = "py-2.5 rounded-lg text-xs font-bold bg-tkpink text-white transition flex items-center justify-center gap-1.5";
+                tabBank.className = "py-2.5 rounded-lg text-xs font-bold text-gray-400 hover:text-white transition flex items-center justify-center gap-1.5";
+            }
+        }
+
+        function setDepositAmount(val) { document.getElementById("depositAmountInput").value = val; updateVietQR(); }
+
+        function updateVietQR() {
+            const amount = Math.max(10000, Number(document.getElementById("depositAmountInput").value) || 100000);
+            const username = currentUser ? currentUser.username.toUpperCase() : "KHACH";
+            const memo = `NAP ${username}`;
+            document.getElementById("transferMemoDisplay").innerText = memo;
+            const qrUrl = `https://img.vietqr.io/image/${SHOP_CONFIG.bankId}-${SHOP_CONFIG.bankAccountNo}-compact2.png?amount=${amount}&addInfo=${encodeURIComponent(memo)}&accountName=${encodeURIComponent(SHOP_CONFIG.bankAccountOwner)}`;
+            document.getElementById("vietQrImage").src = qrUrl;
+        }
+
+        function simulateBankDeposit() {
+            if (!currentUser || isAdmin()) return;
+            const amount = Number(document.getElementById("depositAmountInput").value);
+            users[currentUser.username].balance += amount;
+            saveUsers(); renderHeader(); closeModal("depositModal");
+            showToast(`Nạp thành công +${formatVND(amount)} vào ví!`, "success");
+        }
+
+        function handleCardDeposit(e) {
+            e.preventDefault();
+            if (!currentUser || isAdmin()) return;
+            const telco = document.getElementById("cardTelco").value;
+            const rawAmount = Number(document.getElementById("cardAmount").value);
+            const rate = telco === "MOBIFONE" ? 0.82 : 0.85;
+            const received = Math.floor(rawAmount * rate);
+            users[currentUser.username].balance += received;
+            saveUsers(); renderHeader(); closeModal("depositModal"); e.target.reset();
+            showToast(`Thẻ ${telco} hợp lệ! Cộng ${formatVND(received)} vào ví.`, "success");
+        }
+
+        function openDetailModal(accId) {
+            const acc = accounts.find(a => a.id === accId);
+            if (!acc) return;
+            const c = COUNTRIES[acc.country] || { flag: "🌐", fullName: acc.country };
+            document.getElementById("detailModalContent").innerHTML = `
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="px-2.5 py-1 rounded-lg bg-tkblack border border-tkcyan/30 text-xs font-bold text-white">${c.flag} TikTok ${c.fullName}</span>
+                    <span class="font-mono text-xs font-bold text-tkcyan bg-tkblack px-2.5 py-1 rounded-lg border border-tkborder">#${acc.id}</span>
+                </div>
+                <h3 class="text-lg font-extrabold text-white mb-2">${acc.title}</h3>
+                <p class="text-xs text-gray-300 leading-relaxed bg-tkblack p-3.5 rounded-xl border border-tkborder mb-4">${acc.desc}</p>
+                <div class="grid grid-cols-3 gap-2.5 mb-4 text-center">
+                    <div class="bg-tkblack p-3 rounded-xl border border-tkborder"><span class="block text-[10px] text-gray-400">Followers</span><strong class="text-sm font-extrabold text-white">${acc.followers.toLocaleString("vi-VN")}</strong></div>
+                    <div class="bg-tkblack p-3 rounded-xl border border-tkborder"><span class="block text-[10px] text-gray-400">Likes</span><strong class="text-sm font-extrabold text-tkcyan">${acc.likes.toLocaleString("vi-VN")}</strong></div>
+                    <div class="bg-tkblack p-3 rounded-xl border border-tkborder"><span class="block text-[10px] text-gray-400">Loại</span><strong class="text-xs font-bold text-tkpink">${acc.feature}</strong></div>
+                </div>
+                <div class="flex items-center justify-between pt-3 border-t border-tkborder">
+                    <div><span class="block text-xs text-gray-400">Tổng thanh toán:</span><strong class="text-xl font-extrabold text-tkpink">${formatVND(acc.price)}</strong></div>
+                    <button onclick="closeModal('detailModal'); initiatePurchase('${acc.id}')" class="tk-btn-primary px-6 py-3 rounded-xl font-bold text-white text-sm">Thanh Toán & Nhận Acc</button>
+                </div>
+            `;
+            openModal("detailModal");
+        }
+
+        function initiatePurchase(accId) {
+            if (!currentUser) { openAuthModal("login"); showToast("Vui lòng đăng nhập để mua!", "info"); return; }
+            if (isAdmin()) { showToast("Chủ Shop không thể mua hàng!", "error"); return; }
+            const acc = accounts.find(a => a.id === accId);
+            if (!acc || acc.status !== "AVAILABLE") { showToast("Acc đã có người mua!", "error"); renderAccounts(); return; }
+            const userData = users[currentUser.username];
+            if (userData.balance < acc.price) {
+                showToast("Số dư ví không đủ, vui lòng nạp thêm!", "error");
+                openDepositModal();
+                setDepositAmount(acc.price - userData.balance);
+                return;
+            }
+            userData.balance -= acc.price;
+            acc.status = "SOLD";
+            acc.boughtBy = currentUser.username;
+            const order = {
+                orderId: "NHS-" + Date.now().toString().slice(-6),
+                accId: acc.id,
+                country: acc.country,
+                title: acc.title,
+                price: acc.price,
+                secret: acc.secret,
+                boughtAt: new Date().toLocaleString("vi-VN")
+            };
+            userData.purchases.unshift(order);
+            saveUsers(); saveAccounts(); renderHeader(); renderCountryFilters(); renderAccounts();
+            showDeliveryModal(order);
+            showToast("Thanh toán thành công!", "success");
+        }
+
+        function showDeliveryModal(order) {
+            const c = COUNTRIES[order.country] || { flag: "🌐", fullName: order.country };
+            document.getElementById("deliveryModalContent").innerHTML = `
+                <div class="text-center mb-4">
+                    <div class="w-14 h-14 rounded-full bg-emerald-500/20 border border-emerald-500 text-emerald-400 flex items-center justify-center mx-auto mb-3 text-2xl"><i class="fa-solid fa-check"></i></div>
+                    <h3 class="text-xl font-extrabold text-white">Bàn Giao Thành Công!</h3>
+                    <p class="text-xs text-gray-400 mt-1">Mã đơn: <strong class="text-tkcyan">${order.orderId}</strong></p>
+                </div>
+                <div class="bg-tkblack border border-tkborder rounded-xl p-3.5 mb-4 text-xs space-y-1">
+                    <p class="text-gray-400">Sản phẩm: <strong class="text-white">${c.flag} ${order.title}</strong></p>
+                </div>
+                <div class="bg-black border border-amber-500/50 rounded-xl p-4 mb-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold text-amber-400"><i class="fa-solid fa-key mr-1"></i> THÔNG TIN ĐĂNG NHẬP:</span>
+                        <button onclick="copyText('${order.secret.replace(/'/g, "\\'")}')" class="px-2.5 py-1 rounded bg-amber-500 text-black font-bold text-[11px]">Copy</button>
+                    </div>
+                    <div class="bg-tkcard p-3 rounded-lg border border-tkborder font-mono text-xs text-emerald-300 break-all select-all">${order.secret}</div>
+                </div>
+                <button onclick="closeModal('deliveryModal')" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm">Đóng</button>
+            `;
+            openModal("deliveryModal");
+        }
+
+        function openHistoryModal() {
+            if (!currentUser) { openAuthModal("login"); showToast("Vui lòng đăng nhập!", "info"); return; }
+            if (isAdmin()) { openAdminModal(); return; }
+            const userData = users[currentUser.username];
+            const listEl = document.getElementById("historyListContent");
+            if (!userData.purchases || userData.purchases.length === 0) {
+                listEl.innerHTML = `<div class="text-center py-10 bg-tkblack rounded-xl border border-tkborder"><p class="text-sm text-gray-400 mb-3">Chưa có đơn hàng nào.</p></div>`;
+            } else {
+                listEl.innerHTML = userData.purchases.map(p => {
+                    const c = COUNTRIES[p.country] || { flag: "🌐" };
+                    return `
+                        <div class="bg-tkblack border border-tkborder rounded-xl p-4">
+                            <div class="flex justify-between mb-2 text-xs font-bold text-white"><span>${c.flag} ${p.title}</span><span class="text-gray-400">${p.boughtAt}</span></div>
+                            <div class="flex justify-between items-center gap-2 bg-tkcard p-2.5 rounded-lg border border-tkborder">
+                                <code class="font-mono text-xs text-emerald-300 break-all">${p.secret}</code>
+                                <button onclick="copyText('${p.secret.replace(/'/g, "\\'")}')" class="shrink-0 px-2.5 py-1.5 rounded bg-tkpink/20 text-tkpink text-xs font-bold">Copy</button>
+                            </div>
+                        </div>
+                    `;
+                }).join("");
+            }
+            openModal("historyModal");
+        }
+
+        function openAdminModal() { if (!isAdmin()) return; switchAdminTab('add'); openModal("adminModal"); }
+        function switchAdminTab(tab) {
+            const addForm = document.getElementById("adminAddForm");
+            const manageSec = document.getElementById("adminManageSection");
+            const topupForm = document.getElementById("adminTopupForm");
+            addForm.classList.add("hidden"); manageSec.classList.add("hidden"); topupForm.classList.add("hidden");
+            if (tab === 'add') addForm.classList.remove("hidden");
+            else if (tab === 'manage') { manageSec.classList.remove("hidden"); renderAdminInventory(); }
+            else topupForm.classList.remove("hidden");
+        }
+
+        function handleAdminAddAccount(e) {
+            e.preventDefault();
+            if (!isAdmin()) return;
+            const newAcc = {
+                id: "NH" + String(accounts.length + 1).padStart(2, "0"),
+                country: document.getElementById("adminAccCountry").value,
+                title: document.getElementById("adminAccTitle").value.trim(),
+                followers: Number(document.getElementById("adminAccFollowers").value) || 0,
+                likes: Number(document.getElementById("adminAccLikes").value) || 0,
+                feature: document.getElementById("adminAccFeature").value,
+                price: Number(document.getElementById("adminAccPrice").value) || 100000,
+                desc: document.getElementById("adminAccDesc").value.trim(),
+                secret: document.getElementById("adminAccSecret").value.trim(),
+                status: "AVAILABLE",
+                createdAt: Date.now()
+            };
+            accounts.unshift(newAcc);
+            saveAccounts(); renderCountryFilters(); renderAccounts();
+            e.target.reset(); closeModal("adminModal");
+            showToast("Đăng bán tài khoản thành công!", "success");
+        }
+
+        function renderAdminInventory() {
+            document.getElementById("adminManageSection").innerHTML = accounts.map(acc => `
+                <div class="bg-tkblack border border-tkborder rounded-xl p-3 flex justify-between items-center gap-3 text-xs">
+                    <div><strong>#${acc.id}</strong> - ${acc.title} (${formatVND(acc.price)})</div>
+                    <button onclick="deleteAccount('${acc.id}')" class="px-2 py-1 rounded bg-rose-500/20 text-rose-400">Xóa</button>
+                </div>
+            `).join("");
+        }
+
+        function deleteAccount(id) {
+            if (!isAdmin()) return;
+            accounts = accounts.filter(a => a.id !== id);
+            saveAccounts(); renderAdminInventory(); renderCountryFilters(); renderAccounts();
+            showToast("Đã xóa tài khoản.", "info");
+        }
+
+        function handleAdminManualTopup(e) {
+            e.preventDefault();
+            const u = document.getElementById("topupTargetUser").value.trim().toLowerCase();
+            const amt = Number(document.getElementById("topupTargetAmount").value);
+            if (!users[u]) { showToast("Không tìm thấy khách hàng!", "error"); return; }
+            users[u].balance += amt;
+            saveUsers(); e.target.reset();
+            showToast(`Cộng +${formatVND(amt)} thành công cho ${u}!`, "success");
+        }
+
+        window.addEventListener("DOMContentLoaded", initApp);
+    </script>
+</body>
+</html>
